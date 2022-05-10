@@ -10,9 +10,13 @@
 int main(int argc, char *argv[])
 {
 	FILE *ptr;
+	stack_t **stack = NULL;
+	size_t size = 0;
+	unsigned int line_number = 0;
 	char **tabtoken;
-	char **line;
+	char **line, **token;
 	int i = 0;
+	void (*func)(stack_t * *stack, unsigned int line_number);
 
 	if (argc != 2)
 	{
@@ -27,11 +31,32 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
+	while (getline(&line, &size, &ptr) != -1)
+	{
+		line_number++;
+		token = strtok(line, " ");
+
+		if (strcmp(token, "push") == 0)
+		{
+			token = strtok(NULL, " ");
+			_push(token, stack, line_number);
+		}
+
+		else
+			get_op(token, stack, line_number);
+	}
+
+	exit(0);
+}
+
+/**
 	line = _readline(ptr);
 
-	while (line[i])
+	while (line[line_number])
 	{
 		tabtoken = _tokenize(line[i]);
-		i++;
+		func = get_op(tabtoken[0], stack, line_number);
+		line_number++;
 	}
 }
+*/

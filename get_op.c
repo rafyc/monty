@@ -19,7 +19,10 @@ int get_op(char *line, stack_t **stack, unsigned int linenumber)
 	while (func[i].opcode)
 	{
 		if (strcmp(func[i].opcode, line) == 0)
-			return (func[i].f);
+		{
+			func[i].f(stack, linenumber);
+			exit(EXIT_SUCCESS);
+		}
 		i++;
 	}
 	return (0);

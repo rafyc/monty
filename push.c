@@ -1,5 +1,5 @@
+#include "monty.h"
 
-
-void _push(stack_t **stack, unsigned int line_number)
+void _push(char *token, stack_t **stack, unsigned int line_number)
 {
 }
