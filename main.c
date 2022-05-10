@@ -1,62 +1,43 @@
 #include "monty.h"
 
 /**
- * main - function that runs the monty program
- * @argc: number of arguments
- * @argv: Value of the argument
- * Return: 0 on success or EXIT_FAILURE on error
+ *main - take file.m input
+ *@file: the file monty
+ *Return: int (exit succes or failure)
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	FILE *ptr;
-	stack_t **stack = NULL;
+	FILE *ptr = fopen(argv[1], "r");
+	char *line = NULL, *token = NULL;
 	size_t size = 0;
+	stack_t *stack = NULL;
 	unsigned int line_number = 0;
-	char **tabtoken;
-	char **line, **token;
-	int i = 0;
-	void (*func)(stack_t * *stack, unsigned int line_number);
 
 	if (argc != 2)
 	{
-		fprint(2, "USAGE: monty fil\n");
+		perror("USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 
-	ptr = fopen(argv[1], "r");
 	if (ptr == NULL)
 	{
-		fprintf(2, "Error: Can't open file %s\n", argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-
-	while (getline(&line, &size, &ptr) != -1)
+	while ((getline(&line, &size, ptr)) != - 1)
 	{
 		line_number++;
-		token = strtok(line, " ");
-
+		token = strtok(line, "\n ");
+		if (token == NULL)
+			continue;
 		if (strcmp(token, "push") == 0)
 		{
-			token = strtok(NULL, " ");
-			_push(token, stack, line_number);
+			token = strtok(NULL, "\n ");
+			_push(token, &stack, line_number);
 		}
-
 		else
-			get_op(token, stack, line_number);
+			get_op_func(token, &stack, line_number);
 	}
-
-	exit(0);
+	return (EXIT_SUCCESS);
 }
-
-/**
-	line = _readline(ptr);
-
-	while (line[line_number])
-	{
-		tabtoken = _tokenize(line[i]);
-		func = get_op(tabtoken[0], stack, line_number);
-		line_number++;
-	}
-}
-*/
