@@ -9,7 +9,10 @@
 
 int main(int argc, char *argv[])
 {
-	FILE *line;
+	FILE *ptr;
+	char **tabtoken;
+	char **line;
+	int i = 0;
 
 	if (argc != 2)
 	{
@@ -17,10 +20,18 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	line = fopen(argv[1], "r");
-	if (line == NULL)
+	ptr = fopen(argv[1], "r");
+	if (ptr == NULL)
 	{
 		fprintf(2, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
+	}
+
+	line = _readline(ptr);
+
+	while (line[i])
+	{
+		tabtoken = _tokenize(line[i]);
+		i++;
 	}
 }
