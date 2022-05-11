@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 		token = strtok(line, "\n\t ");
 		if (token == NULL)
 			continue;
-		if (strcmp(token, "push") || strncmp(line, "#", 1) == 0)
+		if (strcmp(token, "push") == 0 || strncmp(line, "#", 1) == 0)
 		{
 			token = strtok(NULL, "\n\t ");
 			_push(token, &stack, line_number);
