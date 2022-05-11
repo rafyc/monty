@@ -2,7 +2,9 @@
 
 **The Monty language :**
 
-Monty is a programming and scripting language. This language was designed by David A. Watt. This project was about creating a program that read this language.
+Monty is a programming and scripting language. <br>
+This language was designed by David A. Watt. <br>
+This project was about creating a program that read this language.
 
 ---
 
