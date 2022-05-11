@@ -31,9 +31,9 @@ int main(int argc, char **argv)
 	{
 		line_number++;
 		token = strtok(line, "\n\t ");
-		if (token == NULL)
+		if (token == NULL || strncmp(line, "#", 1) == 0)
 			continue;
-		if (strcmp(token, "push") == 0 || strncmp(line, "#", 1) == 0)
+		if (strcmp(token, "push") == 0)
 		{
 			token = strtok(NULL, "\n\t ");
 			_push(token, &stack, line_number);
