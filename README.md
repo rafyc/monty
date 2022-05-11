@@ -1,4 +1,4 @@
-## Monty        :train: :train: :train: :train: :train: :train: :train: :train: :train: :train: :train: :train: :train: :train:
+## Monty        :railway_car: :train: :train: :train: :train: :train: :train: :train: :train: :train: :train: :train: :train: :train:
 
 **The Monty language :**
 
