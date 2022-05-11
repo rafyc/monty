@@ -34,12 +34,10 @@ int get_op_func(char *line, stack_t **stack, unsigned int line_number)
 		if (line[i] == '#')
 		{
 			_nop(stack, line_number);
-			return EXIT_SUCCESS;
+			return (EXIT_SUCCESS);
 		}
 	}
-
 	i = 0;
-
 	while (func[i].opcode)
 	{
 		if (strcmp(line, func[i].opcode) == 0)
