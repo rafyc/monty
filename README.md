@@ -42,7 +42,7 @@ File Name | Description :
 `get_op_func.c` | function selects the correct func to perform the operation
 `_pall.c` | opcode print all the values on the stack, starting from the top
 `_pint.c` | opcode print the value at the top of the stack
-`_push.c` | opcode that add an element to the stack by default (Stack), add an element to the queue (Queue)
+`_push.c` | opcode pushes an element to the stack
 `_swap.c` | opcode swap the top two elements of the stack
 `_add.c` | opcode add the two tops elements of the stack
 `_sub.c` | opcode subtract the top element of the stack from the second top element of the stack
