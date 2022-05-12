@@ -39,14 +39,21 @@ File Name | Description :
 --- | ---
 `main.c` | Main program file
 `monty.h` | Header file
-`get_op_func.c` | 
-`_pall.c` | opcode prints all the values on the stack, starting from the top
-`_pint.c` | opcode prints the value at the top of the stack
+`get_op_func.c` | function selects the correct func to perform the operation
+`_pall.c` | opcode print all the values on the stack, starting from the top
+`_pint.c` | opcode print the value at the top of the stack
 `_push.c` | opcode that add an element to the stack by default (Stack), add an element to the queue (Queue)
-`_swap.c` | opcode swaps the top two elements of the stack
-`_add.c` | opcode adds the two tops elements of the stack
-`_nop.c` | opcode delete the element of the stack
-`_pop.c` | opcode removes the top element of the stack       
+`_swap.c` | opcode swap the top two elements of the stack
+`_add.c` | opcode add the two tops elements of the stack
+`_sub.c` | opcode subtract the top element of the stack from the second top element of the stack
+`_div.c` | opcode divide the second top element of the stack by the top element of the stack
+`_mul.c` | opcode multiple the second top element of the stack with the top element of the stack 
+`_mod.c` | opcode compute the rest of the division of the second top element of the stack by the top element of the stack  
+`_pchar.c` | opcode print the char at the top of the stack, followed by a new line
+`_pstr.c` | opcode print the string starting at the top of the stack, followed by a new line
+`_rotr.c` | opcode rotates the stack to the bottom
+`_stack.c` | opcode set the format of the data to a stack (LIFO)
+`_queue.c` | opcode set the format of the data to a queue (FIFO)
 `README.md` | README for the monty project
 ---
 **General :**<br>
