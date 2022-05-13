@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * _mod - function that ...
+ * _pstr - function that print string
  * @stack: pointer of a list ???
  * @line_number: int ???
  */
