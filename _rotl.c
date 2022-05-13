@@ -1,8 +1,8 @@
 #include "monty.h"
 /**
- * _mul - function that ...
- * @stack: pointer of a list ???
- * @line_number: int ???
+ * _rotl - function that rotates the stack to the top
+ * @stack: pointer of a list
+ * @line_number: int
  */
 
 void _rotl(stack_t **stack, unsigned int line_number)
