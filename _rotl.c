@@ -7,20 +7,20 @@
 
 void _rotl(stack_t **stack, unsigned int line_number)
 {
+	stack_t *temp = *stack;
+	stack_t *last;
+
 	(void)line_number;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return;
 
-	stack_t *temp = *stack;
-	stack_t *last = *stack;
-
-	(*stack)->next = (*stack);
+	*stack = (*stack)->next;
 	(*stack)->prev = NULL;
+	last = *stack;
 
-	while (temp->next)
+	while (last->next)
 	{
-		temp = temp->next;
 		last = last->next;
 	}
 
